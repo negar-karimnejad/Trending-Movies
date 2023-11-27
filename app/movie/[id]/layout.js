@@ -20,7 +20,7 @@ export async function getData(id) {
 
 export default async function Layout({ children, params: { id } }) {
   const data = await getData(id);
-  console.log(data);
+
   return (
     <div className="min-h-screen p-10">
       <div className="h-[40vh] relative">
