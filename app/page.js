@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export async function getData() {
   const url = await fetch(
-    "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1",
+    "https://api.themoviedb.org/3/trending/all/day?language=en-US",
     {
       headers: {
         accept: "application/json",

@@ -7,14 +7,14 @@ export async function getData(id) {
     {
       headers: {
         accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3ZDMxM2M3ZWM3ZTMzZDkyYzE5MzU4OGNlMzk4YTczMSIsInN1YiI6IjY1NjQyZTM2MzY3OWExMDk3NjQ4M2VmMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6SaYizpPiX_pc6QeUzxsERHQiQjjvHOdXDRcRBNRRss",
+        Authorization: process.env.THEMOVIEDATABASE_API,
       },
       next: {
         revalidate: 60 * 60 * 24 * 7, //604800  sec = One Week
       },
     }
   );
+
   return url.json();
 }
 
@@ -25,7 +25,7 @@ export default async function Layout({ children, params: { id } }) {
     <div className="min-h-screen p-10">
       <div className="h-[40vh] relative">
         <Image
-          src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`}
+          src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
           alt="Image of movie"
           className="object-cover w-full rounded-lg"
           fill
@@ -38,7 +38,7 @@ export default async function Layout({ children, params: { id } }) {
         <div className="w-1/2 font-medium ">
           <h1>
             <span className="underline">Homepage: </span>
-            <Link href={`${data.homepage}`} target="_blank">
+            <Link href={`${data.homepage?data.homepage:""}`} target="_blank">
               Link
             </Link>
           </h1>
