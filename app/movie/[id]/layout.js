@@ -1,25 +1,9 @@
+import { fetchMovie } from "@/lib/fetchMovie";
 import Image from "next/image";
 import Link from "next/link";
 
-export async function getData(id) {
-  const url = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}?language=en-US`,
-    {
-      headers: {
-        accept: "application/json",
-        Authorization: process.env.THEMOVIEDATABASE_API,
-      },
-      next: {
-        revalidate: 60 * 60 * 24 * 7, //604800  sec = One Week
-      },
-    }
-  );
-
-  return url.json();
-}
-
 export default async function Layout({ children, params: { id } }) {
-  const data = await getData(id);
+  const data = await fetchMovie(id);
 
   return (
     <div className="min-h-screen p-10">
@@ -38,7 +22,10 @@ export default async function Layout({ children, params: { id } }) {
         <div className="w-1/2 font-medium ">
           <h1>
             <span className="underline">Homepage: </span>
-            <Link href={`${data.homepage?data.homepage:""}`} target="_blank">
+            <Link
+              href={`${data.homepage ? data.homepage : ""}`}
+              target="_blank"
+            >
               Link
             </Link>
           </h1>

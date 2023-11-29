@@ -1,24 +1,9 @@
+import { fetchMovies } from "@/lib/fetchMovies";
 import Image from "next/image";
 import Link from "next/link";
 
-export async function getData() {
-  const url = await fetch(
-    "https://api.themoviedb.org/3/trending/all/day?language=en-US",
-    {
-      headers: {
-        accept: "application/json",
-        Authorization: process.env.THEMOVIEDATABASE_API,
-      },
-      next: {
-        revalidate: 60 * 60 * 24 * 7, //604800  sec = One Week
-      },
-    }
-  );
-  return url.json();
-}
-
 export default async function Home() {
-  const data = await getData();
+  const movies = await fetchMovies();
 
   return (
     <div className="bg-white py-6 sm:py-8 lg:py-12">
@@ -29,7 +14,7 @@ export default async function Home() {
           </h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8">
-          {data.results.map((movie) => (
+          {movies.results.map((movie) => (
             <div
               key={movie.id}
               className="flex flex-col overflow-hidden rounded-lg border bg-white"
