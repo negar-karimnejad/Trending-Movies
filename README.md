@@ -1,6 +1,6 @@
 # <p align="center">Trending Movies🌟🍿</p>
 
-<img src=""/>
+<img src="public/Screenshot (37).png"/>
 <hr/>
 
 <p align="center">Real-time app using React, Redux, Tailwind CSS & Supabase as firebase</p>
