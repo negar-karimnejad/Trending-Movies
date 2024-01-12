@@ -10,7 +10,7 @@
 <img src="https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E"/>
 </section>
 
-## <p align="center">You can check out this project on [Trending Movies](https://kalabeekala.iran.liara.run/)</p>
+## <p align="center">You can check out this project on [Trending Movies](https://trending-movies-tau.vercel.app/)</p>
 
 
 
