@@ -11,7 +11,7 @@
 <img src="public/Screenshot (37).png"/>
 <hr/>
 
-## <p align="center">You can check out this project on [Trending Movies](https://trending-movies-tau.vercel.app/)</p>
+#### <p align="center">💡You can check out this project on [Trending Movies](https://trending-movies-tau.vercel.app/)</p>
 
 
 
