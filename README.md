@@ -1,5 +1,5 @@
 # <p align="center">Trending Movies🌟</p>
-<p align="center">To support me, give star⭐ to this repository please.
+<p align="center" font-size="0.5rem">To support me, give star⭐ to this repository please.
 I appreciate your support in advance. ❤</p>
 
 <img src="public/Screenshot (37).png"/>
